@@ -59,16 +59,16 @@ class DataProduct
         self::saveData($products);
     }
 
-    public static function sortProductByPrice()
+    public static function sortProductByPrice($type)
     {
-        $dataJson = file_get_contents(self::$path);
-        $data = json_decode($dataJson,1);
-        foreach ($data as $item){
-            $item->getPrice();
-            arsort($item);
-        }
-        echo '<pre>';
-        print_r($data);
-
+        $products = self::loadData();
+        usort($products, function ($item1, $item2) use ($type){
+           if ($type == 'up') {
+               return $item1->price > $item2->price;
+           } else {
+               return $item1->price < $item2->price;
+           }
+        });
+        return $products;
     }
 }
