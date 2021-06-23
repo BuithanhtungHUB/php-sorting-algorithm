@@ -32,7 +32,7 @@ if(isset($_REQUEST['page'])){
 <body>
 
 <div class="container">
-    <h2>Products List</h2>
+    <h2><a href="index.php">Products List</a></h2>
     <a href="add-product.php" type="button" class="btn btn-outline-success mb-3 mt-3 btn-lg">ADD PRODUCT</a>
     <a href="index.php?sort=up" type="button" class="btn btn-outline-success mb-3 mt-3 btn-lg" >SORT UP</a>
     <a href="index.php?sort=down" type="button" class="btn btn-outline-success mb-3 mt-3 btn-lg" >SORT DOWN</a>
